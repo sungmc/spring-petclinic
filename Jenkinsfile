@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('Checkout') {
       steps {
-        git 'git@github.com:sungmc/spring-petclinic.git'
+        git 'https://github.com/sungmc/spring-petclinic.git'
       }
     }
     stage ('Build') {
