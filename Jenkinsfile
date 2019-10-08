@@ -1,5 +1,8 @@
 pipeline {
   agent { docker 'maven:3.5-alpine'}
+  tools {
+    maven 'Maven_3.5' 
+  }
   stages {
     stage ('Checkout') {
       steps {
