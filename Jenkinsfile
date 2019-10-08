@@ -7,11 +7,13 @@ pipeline {
       }
     }
     stage ('Build') {
+     withMaven {
       steps {
         sh 'mvn clean package'
         junit '**/target/surefire-reports/TEST-*.xml'
         archieveArtifacts artifacts: 'target/*.jar', fingerprint: true  
       }
+     }
     }
   }
 }
